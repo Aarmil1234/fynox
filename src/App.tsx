@@ -1,0 +1,663 @@
+import React, { type ReactNode } from "react";
+import { Reveal } from "./components/site/Reveal";
+import { Cursor } from "./components/site/Cursor";
+import { Counter } from "./components/site/Counter";
+import emailjs from "@emailjs/browser"
+import {
+  ArrowUpRight,
+  Search,
+  TrendingUp,
+  Target,
+  Megaphone,
+  PenLine,
+  BarChart3,
+  Sparkles,
+  Globe,
+  Mail,
+  Phone,
+  MapPin,
+  Star,
+  Check,
+} from "lucide-react";
+
+import logo from "./assets/img/Fynox-Inc-logo.webp";
+
+
+const NAV = [
+  { label: "Home", href: "#" },
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
+  { label: "Work", href: "#work" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#contact" },
+];
+
+const SERVICES = [
+  { icon: Search, title: "Technical SEO", desc: "Crawl, index, schema, Core Web Vitals — engineered for compounding rankings.", tags: ["Audits", "Schema", "CWV"] },
+  { icon: PenLine, title: "Content & Editorial", desc: "Topical authority built with a research-driven editorial system, not AI sludge.", tags: ["Strategy", "Briefs", "E-E-A-T"] },
+  { icon: TrendingUp, title: "Link Building", desc: "Digital PR and outreach that earns mentions from publications that move the needle.", tags: ["Digital PR", "HARO", "Outreach"] },
+  { icon: Target, title: "Performance Ads", desc: "Google, Meta and LinkedIn campaigns optimized for revenue, not vanity clicks.", tags: ["PPC", "Paid Social", "CRO"] },
+  { icon: Megaphone, title: "Brand & Social", desc: "A signature voice and visual system that earns trust before the click.", tags: ["Identity", "Social", "Video"] },
+  { icon: BarChart3, title: "Analytics & CRO", desc: "GA4, server-side tracking and experimentation loops that turn traffic into pipeline.", tags: ["GA4", "A/B", "Dashboards"] },
+];
+
+const STEPS = [
+  { n: "01", title: "Audit & Discovery", desc: "Forensic teardown of your site, market, SERPs and analytics. We surface the leaks before we touch a single page." },
+  { n: "02", title: "Strategy Sprint", desc: "A 90-day roadmap with prioritised bets, projected lift and a clear definition of done." },
+  { n: "03", title: "Build & Ship", desc: "An embedded pod of strategists, engineers and editors execute weekly — no decks, just deliverables." },
+  { n: "04", title: "Compound", desc: "Monthly review, experimentation and re-allocation. We optimise the model, you watch the curve bend." },
+];
+
+const WORK = [
+  { brand: "Lumen.fi", sector: "Fintech SaaS", metric: "+412%", label: "organic sessions in 9 months", color: "from-amber-300/20" },
+  { brand: "Northwave", sector: "DTC Apparel", metric: "5.8x", label: "ROAS on paid social Q4", color: "from-amber-300/20" },
+  { brand: "Holtz Legal", sector: "Professional Services", metric: "#1", label: "for 38 commercial keywords", color: "from-amber-300/20" },
+  { brand: "Forma Labs", sector: "B2B SaaS", metric: "$2.3M", label: "sourced pipeline / 12 mo", color: "from-amber-300/20" },
+];
+
+const TESTIMONIALS = [
+  { quote: "Fynox rebuilt our entire SEO stack in a quarter. Demo bookings tripled and we finally have a marketing engine we trust.", name: "Priya Mehta", role: "VP Growth, Lumen.fi" },
+  { quote: "They operate like an in-house team with the taste of a top agency. The reporting alone is worth the retainer.", name: "Daniel Hwang", role: "CMO, Forma Labs" },
+  { quote: "We went from invisible to category leader. Our paid spend dropped 30% while pipeline doubled.", name: "Sara Holtz", role: "Founder, Holtz Legal" },
+];
+
+const PRICING = [
+  {
+    name: "Launch",
+    price: "$3.4k",
+    cadence: "/month",
+    pitch: "For early-stage brands ready to plant the SEO flag.",
+    features: ["Technical SEO foundation", "4 editorial briefs / mo", "Monthly analytics review", "Slack channel + async loom"],
+  },
+  {
+    name: "Scale",
+    price: "$7.8k",
+    cadence: "/month",
+    pitch: "Most chosen — a full growth pod operating as your team.",
+    features: ["Everything in Launch", "10 editorial pieces / mo", "Digital PR + outreach", "Paid media management", "Bi-weekly strategy sync"],
+    featured: true,
+  },
+  {
+    name: "Authority",
+    price: "Custom",
+    cadence: "",
+    pitch: "For market leaders defending and expanding category share.",
+    features: ["Dedicated growth pod", "Custom data warehouse", "Experimentation program", "Executive workshops"],
+  },
+];
+
+const FAQS = [
+  { q: "How quickly will I see SEO results?", a: "Technical wins land in 30 days. Meaningful organic lift typically begins month 3 and compounds aggressively from month 6." },
+  { q: "Do you work with our existing team?", a: "Always. We embed in your tools — Slack, Linear, Notion — and operate as an extension of your in-house marketing function." },
+  { q: "What industries do you specialize in?", a: "B2B SaaS, fintech, healthcare, and considered DTC. Verticals with long sales cycles where content and trust drive revenue." },
+  { q: "Is there a minimum contract length?", a: "We ask for a 90-day initial engagement so the strategy can prove itself, then we move month-to-month. No surprise lock-ins." },
+];
+
+function Home() {
+  return (
+    <main className="relative overflow-hidden bg-background text-foreground">
+      <Cursor />
+      <BackgroundFx />
+      <Nav />
+      <Hero />
+      <Marquee />
+      <Stats />
+      <Services />
+      <Process />
+      <Work />
+      <Testimonials />
+      <Pricing />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
+  );
+}
+
+function BackgroundFx() {
+  return (
+    <div className="pointer-events-none fixed inset-0 -z-10">
+      <div className="absolute inset-0 grid-bg opacity-[0.55]" />
+      <div className="absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full radial-spot blur-2xl" />
+      <div className="blob absolute top-[40%] -left-40 h-[500px] w-[500px] rounded-full bg-[oklch(0.83_0.17_85/0.08)] blur-3xl" />
+      <div className="blob absolute top-[70%] -right-40 h-[600px] w-[600px] rounded-full bg-[oklch(0.83_0.17_85/0.06)] blur-3xl" />
+    </div>
+  );
+}
+
+function Nav() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-5">
+      <nav className="flex w-full max-w-6xl items-center justify-between rounded-full border border-white/10 bg-black/40 px-3 py-2 backdrop-blur-xl">
+        <a href="#top" className="flex items-center gap-2 pl-3">
+          <img src={logo} alt="Fynox" className="h-5 w-auto" style={{height: "40px"}} />
+        </a>
+        <ul className="hidden items-center gap-1 md:flex">
+          {NAV.map((n) => (
+            <li key={n.href}>
+              <a href={n.href} className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">
+                {n.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contact"
+          className="group flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
+        >
+          Book a call
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 text-center">
+      <Reveal>
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-amber animate-pulse" />
+          SEO · Performance · Brand
+        </div>
+      </Reveal>
+
+      <Reveal delay={120}>
+        <h1 className="font-display mt-8 max-w-5xl text-5xl font-bold leading-[0.95] sm:text-7xl md:text-[7.5rem]">
+          We engineer
+          <br />
+          <span className="text-stroke">organic</span> <span className="text-amber italic">growth.</span>
+        </h1>
+      </Reveal>
+
+      <Reveal delay={240}>
+        <p className="mx-auto mt-8 max-w-xl text-base text-muted-foreground sm:text-lg">
+          A premium SEO and digital marketing studio for ambitious brands. We turn search traffic into pipeline, and pipeline into category leadership.
+        </p>
+      </Reveal>
+
+      <Reveal delay={360}>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a href="#contact" className="group flex items-center gap-2 rounded-full bg-amber px-7 py-4 text-sm font-semibold text-black transition-transform hover:scale-105">
+            Start your growth audit
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+          <a href="#work" className="rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/5">
+            See case studies
+          </a>
+        </div>
+      </Reveal>
+
+    </section>
+  );
+}
+
+function Marquee() {
+  const items = ["Search Engine Optimization", "Performance Marketing", "Content Strategy", "Conversion Design", "Digital PR", "Analytics & CRO"];
+  const row = [...items, ...items];
+  return (
+    <section className="relative border-y border-white/10 bg-black/40 py-8 backdrop-blur">
+      <div className="flex overflow-hidden">
+        <div className="marquee flex shrink-0 items-center gap-12 pr-12">
+          {row.map((t, i) => (
+            <div key={i} className="flex shrink-0 items-center gap-12">
+              <span className="font-display text-3xl font-semibold text-foreground/90 sm:text-5xl">{t}</span>
+              <Sparkles className="h-6 w-6 text-amber" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Stats() {
+  const stats = [
+    { v: 412, s: "%", l: "Avg. organic lift in 9 months" },
+    { v: 5.8, s: "x", l: "Average paid ROAS", float: true },
+    { v: 120, s: "+", l: "Brands scaled globally" },
+    { v: 38, s: "M", l: "Pipeline sourced for clients" },
+  ];
+  return (
+    <section className="relative px-6 py-24">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/5 md:grid-cols-4">
+        {stats.map((s, i) => (
+          <Reveal key={i} delay={i * 100}>
+            <div className="flex h-full flex-col justify-between bg-background/80 p-8">
+              <div className="font-display text-5xl font-bold tracking-tight text-amber sm:text-6xl">
+                {s.float ? s.v.toFixed(1) : <Counter to={s.v} />}{s.s}
+              </div>
+              <div className="mt-6 text-sm text-muted-foreground">{s.l}</div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function SectionHeading({ tag, title, sub }: { tag: string; title: ReactNode; sub?: string }) {
+  return (
+    <div className="mx-auto mb-16 max-w-3xl text-center">
+      <Reveal>
+        <div className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
+          <span className="h-1 w-1 rounded-full bg-amber" /> {tag}
+        </div>
+      </Reveal>
+      <Reveal delay={100}>
+        <h2 className="font-display mt-6 text-4xl font-bold leading-tight sm:text-6xl">{title}</h2>
+      </Reveal>
+      {sub && (
+        <Reveal delay={200}>
+          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">{sub}</p>
+        </Reveal>
+      )}
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <section id="services" className="relative px-6 py-32">
+      <SectionHeading
+        tag="What we do"
+        title={<>A full-stack growth team, <span className="text-amber italic">on demand.</span></>}
+        sub="Six disciplines, one operating system. Each engagement plugs into the same data spine, so every channel learns from every other."
+      />
+      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {SERVICES.map((s, i) => {
+          const Icon = s.icon;
+          return (
+            <Reveal key={s.title} delay={i * 80}>
+              <div className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_30px_80px_-20px_oklch(0.83_0.17_85/0.25)]">
+                <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-amber/0 transition-all duration-500 group-hover:bg-amber/10 " />
+                <div className="relative">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-amber/15 text-amber transition-colors ">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display mt-6 text-2xl font-semibold">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <div className="mt-6 flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span key={t} className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] text-muted-foreground">{t}</span>
+                    ))}
+                  </div>
+                  <ArrowUpRight className="absolute right-0 top-0 h-5 w-5 text-muted-foreground transition-all group-hover:text-amber group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function Process() {
+  return (
+    <section id="process" className="relative px-6 py-32">
+      <SectionHeading tag="The Method" title={<>An operating system, <span className="text-amber italic">not a project.</span></>} sub="A repeatable four-stage loop that compounds month over month." />
+      <div className="mx-auto max-w-6xl">
+        <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-amber/40 to-transparent lg:block" />
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} delay={i * 100}>
+              <div className="group relative rounded-3xl border border-white/10 bg-card/40 p-7 backdrop-blur">
+                <div className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-background border border-amber/40 text-amber font-display text-lg font-bold">
+                  {s.n}
+                </div>
+                <h3 className="font-display mt-6 text-xl font-semibold">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Work() {
+  return (
+    <section id="work" className="relative px-6 py-32">
+      <SectionHeading tag="Selected Work" title={<>Numbers that <span className="text-amber italic">compound.</span></>} sub="A snapshot of what's possible when strategy, content and engineering pull in the same direction." />
+      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
+        {WORK.map((w, i) => (
+          <Reveal key={w.brand} delay={i * 100}>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-card/40 p-8 transition-all hover:border-amber/40">
+              <div className={`absolute inset-0 bg-gradient-to-br ${w.color} via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100`} />
+              <div className="relative flex items-center justify-between">
+                <div>
+                  <div className="font-display text-2xl font-semibold">{w.brand}</div>
+                  <div className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">{w.sector}</div>
+                </div>
+                <ArrowUpRight className="h-6 w-6 text-muted-foreground transition-all group-hover:text-amber group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+              <div className="relative mt-12 flex items-end justify-between">
+                <div className="font-display text-7xl font-bold leading-none text-amber sm:text-8xl">{w.metric}</div>
+                <div className="max-w-[40%] text-right text-sm text-muted-foreground">{w.label}</div>
+              </div>
+              <div className="relative mt-8 h-px w-full bg-white/10" />
+              <div className="relative mt-4 grid grid-cols-12 gap-1">
+                {[...Array(12)].map((_, k) => (
+                  <div key={k} className="h-8 rounded-sm bg-amber/20" style={{ height: `${10 + Math.sin((k + i) * 0.9) * 10 + k * 2}px` }} />
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  return (
+    <section className="relative px-6 py-32">
+      <SectionHeading tag="Voices" title={<>Trusted by founders <span className="text-amber italic">who ship.</span></>} />
+      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+        {TESTIMONIALS.map((t, i) => (
+          <Reveal key={i} delay={i * 100}>
+            <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-card/40 p-7">
+              <div className="flex items-center gap-1 text-amber">
+                {[...Array(5)].map((_, k) => <Star key={k} className="h-3.5 w-3.5 fill-current" />)}
+              </div>
+              <p className="mt-5 flex-1 text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
+              <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-amber/60 to-amber/20" />
+                <div>
+                  <div className="text-sm font-semibold">{t.name}</div>
+                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="pricing" className="relative px-6 py-32">
+      <SectionHeading tag="Engagements" title={<>Simple plans, <span className="text-amber italic">serious outcomes.</span></>} sub="Transparent monthly retainers. Cancel anytime after the initial 90-day strategy window." />
+      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+        {PRICING.map((p, i) => (
+          <Reveal key={p.name} delay={i * 100}>
+            <div className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all ${p.featured ? "border-amber/60 bg-gradient-to-b from-amber/[0.08] to-transparent shadow-[0_30px_80px_-30px_oklch(0.83_0.17_85/0.45)]" : "border-white/10 bg-card/40"}`}>
+              {p.featured && <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-black">Most chosen</div>}
+              <div className="font-display text-xl font-semibold">{p.name}</div>
+              <div className="mt-2 text-sm text-muted-foreground">{p.pitch}</div>
+              <div className="mt-8 flex items-baseline gap-1">
+                <div className="font-display text-5xl font-bold">{p.price}</div>
+                <div className="text-sm text-muted-foreground">{p.cadence}</div>
+              </div>
+              <ul className="mt-8 flex-1 space-y-3">
+                {p.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
+                    <span className="text-foreground/85">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02] ${p.featured ? "bg-amber text-black" : "border border-white/15 text-foreground hover:bg-white/5"}`}>
+                Start with {p.name}
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  return (
+    <section className="relative px-6 py-32">
+      <SectionHeading tag="FAQ" title={<>Questions, <span className="text-amber italic">answered.</span></>} />
+      <div className="mx-auto max-w-3xl space-y-3">
+        {FAQS.map((f, i) => (
+          <Reveal key={i} delay={i * 60}>
+            <details className="group rounded-2xl border border-white/10 bg-card/40 p-6 transition-colors open:border-amber/40 open:bg-card/60">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
+                <span className="font-display text-lg font-semibold">{f.q}</span>
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 text-amber transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+            </details>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  const formRef = React.useRef<HTMLFormElement>(null)
+  const [loading, setLoading] = React.useState(false)
+  const [success, setSuccess] = React.useState(false)
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!formRef.current) return
+
+    try {
+      setLoading(true)
+
+      await emailjs.sendForm(
+        "service_stl6val", // replace
+        "template_5sbimdu", // replace
+        formRef.current,
+        "tlcmnqeSwV2JDV6vL" // replace public key
+      )
+
+      setSuccess(true)
+      formRef.current.reset()
+    } catch (error) {
+      console.error(error)
+      alert("Failed to send message")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <section id="contact" className="relative px-6 py-32">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-amber/30 bg-gradient-to-br from-amber/[0.12] via-background to-background p-10 sm:p-16">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <Reveal>
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
+                <span className="h-1 w-1 rounded-full bg-amber" /> Let's build
+              </div>
+
+              <h2 className="font-display mt-6 text-4xl font-bold leading-tight sm:text-6xl">
+                Ready to bend the
+                <br />
+                <span className="text-amber italic">growth curve?</span>
+              </h2>
+
+              <p className="mt-6 max-w-md text-muted-foreground">
+                Tell us where you are and where you want to be. You'll get a free
+                30-minute teardown of your current SEO and paid stack — no slides,
+                just signal.
+              </p>
+
+              <ul className="mt-8 space-y-3 text-sm">
+                <li className="flex items-center gap-3">
+                  <Mail className="h-4 w-4 text-amber" />
+                  hello@fynoxinc.com
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <Phone className="h-4 w-4 text-amber" />
+                  +91 7359777047
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <MapPin className="h-4 w-4 text-amber" />
+                  Rajkot, Gujarat
+                </li>
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="rounded-2xl border border-white/10 bg-background/60 p-6 backdrop-blur"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field
+                  label="Full name"
+                  name="full_name"
+                  placeholder="Your Name"
+                />
+
+                <Field
+                  label="Work email"
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                />
+              </div>
+
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <Field
+                  label="Company"
+                  name="company"
+                  placeholder="Company Name"
+                />
+
+                <Field
+                  label="Website"
+                  name="website"
+                  placeholder="Website Link"
+                />
+              </div>
+
+              <div className="mt-4">
+                <label className="mb-2 block text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  What do you need?
+                </label>
+
+                <textarea
+                  name="message"
+                  rows={4}
+                  placeholder="A quick note on goals, channels and timelines…"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-amber/60"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="group mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-amber px-6 py-4 text-sm font-semibold text-black transition-transform hover:scale-[1.02]"
+              >
+                {loading ? "Sending..." : "Request my free audit"}
+
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+
+              {success && (
+                <p className="mt-3 text-center text-sm text-green-500">
+                  Message sent successfully!
+                </p>
+              )}
+
+              <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                We reply within three business days.
+              </p>
+            </form>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Field({
+  label,
+  type = "text",
+  placeholder,
+  name,
+}: {
+  label: string
+  type?: string
+  placeholder?: string
+  name: string
+}) {
+  return (
+    <label className="block">
+      <div className="mb-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        {label}
+      </div>
+
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-amber/60"
+      />
+    </label>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="relative border-t border-white/10 px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-12 md:grid-cols-4">
+          <div className="md:col-span-2">
+            <a href="#top" className="flex items-center gap-2">
+              <img src={logo} alt="Fynox" className="h-5 w-auto" style={{height: "40px"}} />
+            </a>
+            <p className="mt-5 max-w-sm text-sm text-muted-foreground">
+              A premium SEO and digital marketing studio engineering compounding growth for ambitious brands.
+            </p>
+            <div className="mt-6 flex items-center gap-2">
+              {["Tw", "In", "Yt", "Dr"].map((s) => (
+                <a key={s} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-xs text-muted-foreground transition-colors hover:border-amber/50 hover:text-amber">{s}</a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Studio</div>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><a href="#services" className="hover:text-amber">Services</a></li>
+              <li><a href="#process" className="hover:text-amber">Process</a></li>
+              <li><a href="#work" className="hover:text-amber">Work</a></li>
+              <li><a href="#pricing" className="hover:text-amber">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Resources</div>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><a href="#" className="hover:text-amber">SEO Audit Template</a></li>
+              <li><a href="#" className="hover:text-amber">Growth Playbook</a></li>
+              <li><a href="#" className="hover:text-amber">Insights</a></li>
+              <li><a href="#contact" className="hover:text-amber">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-muted-foreground sm:flex-row">
+          <div className="flex items-center gap-2"><Globe className="h-3.5 w-3.5" /> © {new Date().getFullYear()} Fynox. All rights reserved.</div>
+          <div className="flex items-center gap-5">
+            <a href="#" className="hover:text-foreground">Privacy</a>
+            <a href="#" className="hover:text-foreground">Terms</a>
+            <a href="#" className="hover:text-foreground">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Home;
