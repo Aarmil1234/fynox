@@ -27,18 +27,18 @@ const NAV = [
   { label: "Home", href: "#" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Work", href: "#work" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Results", href: "#results" },
+  // { label: "About", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
 const SERVICES = [
-  { icon: Search, title: "Technical SEO", desc: "Crawl, index, schema, Core Web Vitals — engineered for compounding rankings.", tags: ["Audits", "Schema", "CWV"] },
-  { icon: PenLine, title: "Content & Editorial", desc: "Topical authority built with a research-driven editorial system, not AI sludge.", tags: ["Strategy", "Briefs", "E-E-A-T"] },
-  { icon: TrendingUp, title: "Link Building", desc: "Digital PR and outreach that earns mentions from publications that move the needle.", tags: ["Digital PR", "HARO", "Outreach"] },
-  { icon: Target, title: "Performance Ads", desc: "Google, Meta and LinkedIn campaigns optimized for revenue, not vanity clicks.", tags: ["PPC", "Paid Social", "CRO"] },
-  { icon: Megaphone, title: "Brand & Social", desc: "A signature voice and visual system that earns trust before the click.", tags: ["Identity", "Social", "Video"] },
-  { icon: BarChart3, title: "Analytics & CRO", desc: "GA4, server-side tracking and experimentation loops that turn traffic into pipeline.", tags: ["GA4", "A/B", "Dashboards"] },
+  { icon: Search, title: "Search Engine Optimization", desc: "Improve rankings, organic traffic and long-term search visibility through strategic SEO execution.", tags: ["Technical SEO", "On-Page SEO", "Off-Page SEO"] },
+  { icon: PenLine, title: "Google Ads", desc: "Capture high-intent leads through search campaigns optimized for conversions and ROI.", tags: ["Search Ads", "Call Ads", "Lead Gen"] },
+  { icon: TrendingUp, title: "Meta Ads", desc: "Generate quality enquiries using data-driven Facebook and Instagram advertising campaigns.", tags: ["Lead Gen", "WhatsApp Ads", "Retargeting"] },
+  { icon: Target, title: "Knowledge Panels", desc: "Build authority and credibility with a verified Google presence for brands and professionals.", tags: ["Authority", "Brand Entity", "Google"] },
+  { icon: Megaphone, title: "Local SEO", desc: "Increase visibility in local search results and Google Business Profile rankings.", tags: ["GBP", "Maps Ranking", "Reviews"] },
+  { icon: BarChart3, title: "White Label SEO", desc: "Reliable backend SEO execution for agencies looking to scale client delivery.", tags: ["Agency Partner", "SEO Delivery", "Reporting"] },
 ];
 
 const STEPS = [
@@ -49,40 +49,42 @@ const STEPS = [
 ];
 
 const WORK = [
-  { brand: "Lumen.fi", sector: "Fintech SaaS", metric: "+412%", label: "organic sessions in 9 months", color: "from-amber-300/20" },
-  { brand: "Northwave", sector: "DTC Apparel", metric: "5.8x", label: "ROAS on paid social Q4", color: "from-amber-300/20" },
-  { brand: "Holtz Legal", sector: "Professional Services", metric: "#1", label: "for 38 commercial keywords", color: "from-amber-300/20" },
-  { brand: "Forma Labs", sector: "B2B SaaS", metric: "$2.3M", label: "sourced pipeline / 12 mo", color: "from-amber-300/20" },
+  {  metric: "1M+", label: "Organic Traffic Generated", color: "from-amber-300/20" },
+  { metric: "5.8x", label: "Highest ROAS Achieved", color: "from-amber-300/20" },
+  {  metric: "2000+", label: "Qualified Leads Generated", color: "from-amber-300/20" },
+  {  metric: "14Rs", label: "Lowest CPL Delivered", color: "from-amber-300/20" },
 ];
 
 const TESTIMONIALS = [
-  { quote: "Fynox rebuilt our entire SEO stack in a quarter. Demo bookings tripled and we finally have a marketing engine we trust.", name: "Priya Mehta", role: "VP Growth, Lumen.fi" },
-  { quote: "They operate like an in-house team with the taste of a top agency. The reporting alone is worth the retainer.", name: "Daniel Hwang", role: "CMO, Forma Labs" },
-  { quote: "We went from invisible to category leader. Our paid spend dropped 30% while pipeline doubled.", name: "Sara Holtz", role: "Founder, Holtz Legal" },
+  { quote: "We saw improvement in our Google rankings and online visibility after SEO work. The Knowledge Panel for our company and personal brand helped build credibility and trust. The approach was professional, result-driven, and focused on growth.", name: "Divyesh Savaliya", role: "Chairman, Onix Renewable" },
+  { quote: "We started seeing better rankings on Google and more visibility for our business after the SEO work. The progress is steady, and communication has been clear throughout. The approach is practical and focused on improving results over time.", name: "Piyush Variya", role: "Managing Director, Sunora Solar" },
+  { quote: "Our Meta Ads campaigns started delivering better results with a reduction in cost per lead. Within a few days, lead quality improved and performance became more stable. The approach is practical, data-driven, and focused on real results.", name: "Chintan Jadav", role: "owner, Lexus Energy" },
+  { quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.", name: "Yagna Chandra", role: "Director, Atul Motors(Maruti Suzuki)" },
+  { quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.", name: "Alpesh Chandra", role: "CEO, Atul Automotives(Mahindra)" },
 ];
 
 const PRICING = [
   {
-    name: "Launch",
-    price: "$3.4k",
+    name: "Starter",
+    price: "₹9,999",
     cadence: "/month",
-    pitch: "For early-stage brands ready to plant the SEO flag.",
-    features: ["Technical SEO foundation", "4 editorial briefs / mo", "Monthly analytics review", "Slack channel + async loom"],
+    pitch: "Perfect for businesses looking to improve search visibility and establish a strong organic foundation.",
+    features: ["Technical SEO foundation", "On-Page Optimization", "Off-Page Optimization", "Monthly Reporting"],
   },
   {
-    name: "Scale",
-    price: "$7.8k",
+    name: "Growth",
+    price: "₹19,999",
     cadence: "/month",
-    pitch: "Most chosen — a full growth pod operating as your team.",
-    features: ["Everything in Launch", "10 editorial pieces / mo", "Digital PR + outreach", "Paid media management", "Bi-weekly strategy sync"],
+    pitch: "Most chosen - a full growth pod operating as your team.",
+    features: ["Everything in Starter", "Google Ads Management", "Meta Ads Management", "Conversion Tracking", "Strategy Reviews"],
     featured: true,
   },
   {
-    name: "Authority",
+    name: "Enterprise",
     price: "Custom",
     cadence: "",
-    pitch: "For market leaders defending and expanding category share.",
-    features: ["Dedicated growth pod", "Custom data warehouse", "Experimentation program", "Executive workshops"],
+    pitch: "Tailored growth solutions for established businesses, agencies and high-growth brands.",
+    features: ["Dedicated Strategy", "White Label SEO", "Knowledge Panel Services", "Custom Deliverables"],
   },
 ];
 
@@ -145,8 +147,7 @@ function Nav() {
           href="#contact"
           className="group flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
         >
-          Book a call
-          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+Let's Talk          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
       </nav>
     </header>
@@ -159,7 +160,7 @@ function Hero() {
       <Reveal>
         <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-amber animate-pulse" />
-          SEO · Performance · Brand
+          SEO · Ads · Authority
         </div>
       </Reveal>
 
@@ -167,24 +168,27 @@ function Hero() {
         <h1 className="font-display mt-8 max-w-5xl text-5xl font-bold leading-[0.95] sm:text-7xl md:text-[7.5rem]">
           We engineer
           <br />
-          <span className="text-stroke">organic</span> <span className="text-amber italic">growth.</span>
+          <span className="text-stroke">business</span> <span className="text-amber italic">growth.</span>
         </h1>
       </Reveal>
 
       <Reveal delay={240}>
         <p className="mx-auto mt-8 max-w-xl text-base text-muted-foreground sm:text-lg">
-          A premium SEO and digital marketing studio for ambitious brands. We turn search traffic into pipeline, and pipeline into category leadership.
+          Premium SEO, advertising and authority solutions
+powered by dedicated strategy, systematic execution and
+transparent reporting.
+
         </p>
       </Reveal>
 
       <Reveal delay={360}>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a href="#contact" className="group flex items-center gap-2 rounded-full bg-amber px-7 py-4 text-sm font-semibold text-black transition-transform hover:scale-105">
-            Start your growth audit
+            Explore our services
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
-          <a href="#work" className="rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/5">
-            See case studies
+          <a href="#results" className="rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/5">
+            Our Process
           </a>
         </div>
       </Reveal>
@@ -194,7 +198,7 @@ function Hero() {
 }
 
 function Marquee() {
-  const items = ["Search Engine Optimization", "Performance Marketing", "Content Strategy", "Conversion Design", "Digital PR", "Analytics & CRO"];
+  const items = ["Search Engine Optimization", "Performance Marketing", "Google Ads", "Meta Ads", "Google Knowledge Panel", "White Label Seo" , " Lead Generation" , "Digital Authority"];
   const row = [...items, ...items];
   return (
     <section className="relative border-y border-white/10 bg-black/40 py-8 backdrop-blur">
@@ -214,10 +218,10 @@ function Marquee() {
 
 function Stats() {
   const stats = [
-    { v: 412, s: "%", l: "Avg. organic lift in 9 months" },
-    { v: 5.8, s: "x", l: "Average paid ROAS", float: true },
-    { v: 120, s: "+", l: "Brands scaled globally" },
-    { v: 38, s: "M", l: "Pipeline sourced for clients" },
+    { v: 1, s: "M+", l: "Organic Traffic Generated" },
+    { v: 5.8, s: "x", l: "Highest ROAS Achieved", float: true },
+    { v: 2000, s: "+", l: "Qualified Leads Generated" },
+    { v: 14, s: "Rs", l: "Lowest CPL Delivered" },
   ];
   return (
     <section className="relative px-6 py-24">
@@ -262,8 +266,11 @@ function Services() {
     <section id="services" className="relative px-6 py-32">
       <SectionHeading
         tag="What we do"
-        title={<>A full-stack growth team, <span className="text-amber italic">on demand.</span></>}
-        sub="Six disciplines, one operating system. Each engagement plugs into the same data spine, so every channel learns from every other."
+        title={<>Digital Growth Solutions,, <span className="text-amber italic">built for results.</span></>}
+        sub="Strategic SEO, performance advertising and
+digital authority solutions designed to increase
+visibility, generate qualified leads and accelerate
+business growth."
       />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((s, i) => {
@@ -320,7 +327,7 @@ function Process() {
 
 function Work() {
   return (
-    <section id="work" className="relative px-6 py-32">
+    <section id="results" className="relative px-6 py-32">
       <SectionHeading tag="Selected Work" title={<>Numbers that <span className="text-amber italic">compound.</span></>} sub="A snapshot of what's possible when strategy, content and engineering pull in the same direction." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
         {WORK.map((w, i) => (
@@ -633,8 +640,8 @@ function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><a href="#services" className="hover:text-amber">Services</a></li>
               <li><a href="#process" className="hover:text-amber">Process</a></li>
-              <li><a href="#work" className="hover:text-amber">Work</a></li>
-              <li><a href="#pricing" className="hover:text-amber">Pricing</a></li>
+              <li><a href="#results" className="hover:text-amber">Results</a></li>
+              <li><a href="#contact" className="hover:text-amber">Contact</a></li>
             </ul>
           </div>
           <div>
