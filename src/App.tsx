@@ -33,26 +33,26 @@ const NAV = [
 ];
 
 const SERVICES = [
-  { icon: Search, title: "Search Engine Optimization", desc: "Improve rankings, organic traffic and long-term search visibility through strategic SEO execution.", tags: ["Technical SEO", "On-Page SEO", "Off-Page SEO"] },
+  { icon: Search, title: "Search Engine Optimization", desc: "Improve rankings, organic traffic and search visibility through strategic SEO execution.", tags: ["Technical SEO", "On-Page SEO", "Off-Page SEO"] },
   { icon: PenLine, title: "Google Ads", desc: "Capture high-intent leads through search campaigns optimized for conversions and ROI.", tags: ["Search Ads", "Call Ads", "Lead Gen"] },
-  { icon: TrendingUp, title: "Meta Ads", desc: "Generate quality enquiries using data-driven Facebook and Instagram advertising campaigns.", tags: ["Lead Gen", "WhatsApp Ads", "Retargeting"] },
+  { icon: TrendingUp, title: "Meta Ads", desc: "Generate quality enquiries using Facebook and Instagram advertising campaigns.", tags: ["Lead Gen", "WhatsApp Ads", "Retargeting"] },
   { icon: Target, title: "Knowledge Panels", desc: "Build authority and credibility with a verified Google presence for brands and professionals.", tags: ["Authority", "Brand Entity", "Google"] },
   { icon: Megaphone, title: "Local SEO", desc: "Increase visibility in local search results and Google Business Profile rankings.", tags: ["GBP", "Maps Ranking", "Reviews"] },
   { icon: BarChart3, title: "White Label SEO", desc: "Reliable backend SEO execution for agencies looking to scale client delivery.", tags: ["Agency Partner", "SEO Delivery", "Reporting"] },
 ];
 
 const STEPS = [
-  { n: "01", title: "Audit & Discovery", desc: "Forensic teardown of your site, market, SERPs and analytics. We surface the leaks before we touch a single page." },
-  { n: "02", title: "Strategy Sprint", desc: "A 90-day roadmap with prioritised bets, projected lift and a clear definition of done." },
-  { n: "03", title: "Build & Ship", desc: "An embedded pod of strategists, engineers and editors execute weekly — no decks, just deliverables." },
-  { n: "04", title: "Compound", desc: "Monthly review, experimentation and re-allocation. We optimise the model, you watch the curve bend." },
+  { n: "01", title: "Research & Audit", desc: "We analyse your market, competitors and search trends to uncover growth opportunities and revenue gaps." },
+  { n: "02", title: "Growth Strategy", desc: "A 90-day roadmap built around priorities, projections and the actions required to achieve growth goals." },
+  { n: "03", title: "Execution", desc: "SEO, advertising and authority campaigns executed systematically with clear accountability and reporting." },
+  { n: "04", title: "Optimise & Scale", desc: "Continuous analysis and refinement improve performance, lead quality and business growth." },
 ];
 
 const WORK = [
   {  metric: "1M+", label: "Organic Traffic Generated", color: "from-amber-300/20" },
   { metric: "5.8x", label: "Highest ROAS Achieved", color: "from-amber-300/20" },
   {  metric: "2000+", label: "Qualified Leads Generated", color: "from-amber-300/20" },
-  {  metric: "14Rs", label: "Lowest CPL Delivered", color: "from-amber-300/20" },
+  { metric: "₹14", label: "Lowest CPL Delivered", color: "from-amber-300/20" },
 ];
 
 const TESTIMONIALS = [
@@ -184,7 +184,7 @@ transparent reporting.
       <Reveal delay={360}>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a href="#contact" className="group flex items-center gap-2 rounded-full bg-amber px-7 py-4 text-sm font-semibold text-black transition-transform hover:scale-105">
-            Explore our services
+            Get a Quote
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a href="#results" className="rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/5">
@@ -198,7 +198,7 @@ transparent reporting.
 }
 
 function Marquee() {
-  const items = ["Search Engine Optimization", "Performance Marketing", "Google Ads", "Meta Ads", "Google Knowledge Panel", "White Label Seo" , " Lead Generation" , "Digital Authority"];
+  const items = ["Search Engine Optimization", "Performance Marketing", "Google Ads", "Meta Ads", "Google Knowledge Panel", "White Label SEO" , " Lead Generation" , "Digital Authority"];
   const row = [...items, ...items];
   return (
     <section className="relative border-y border-white/10 bg-black/40 py-8 backdrop-blur">
@@ -221,7 +221,7 @@ function Stats() {
     { v: 1, s: "M+", l: "Organic Traffic Generated" },
     { v: 5.8, s: "x", l: "Highest ROAS Achieved", float: true },
     { v: 2000, s: "+", l: "Qualified Leads Generated" },
-    { v: 14, s: "Rs", l: "Lowest CPL Delivered" },
+    { v: 14, s: "₹", l: "Lowest CPL Delivered" },
   ];
   return (
     <section className="relative px-6 py-24">
@@ -266,7 +266,7 @@ function Services() {
     <section id="services" className="relative px-6 py-32">
       <SectionHeading
         tag="What we do"
-        title={<>Digital Growth Solutions,, <span className="text-amber italic">built for results.</span></>}
+        title={<>Digital Growth Solutions, <span className="text-amber italic">built for results.</span></>}
         sub="Strategic SEO, performance advertising and
 digital authority solutions designed to increase
 visibility, generate qualified leads and accelerate
@@ -304,7 +304,7 @@ business growth."
 function Process() {
   return (
     <section id="process" className="relative px-6 py-32">
-      <SectionHeading tag="The Method" title={<>An operating system, <span className="text-amber italic">not a project.</span></>} sub="A repeatable four-stage loop that compounds month over month." />
+      <SectionHeading tag="The Method" title={<>An operating system, <span className="text-amber italic">not a project.</span></>} sub="A proven framework that turns visibility into qualified leads and sustainable growth." />
       <div className="mx-auto max-w-6xl">
         <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-amber/40 to-transparent lg:block" />
