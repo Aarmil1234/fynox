@@ -49,16 +49,17 @@ const STEPS = [
 ];
 
 const WORK = [
-  {  metric: "1M+", label: "Organic Traffic Generated", color: "from-amber-300/20" },
-  { metric: "5.8x", label: "Highest ROAS Achieved", color: "from-amber-300/20" },
-  {  metric: "2000+", label: "Qualified Leads Generated", color: "from-amber-300/20" },
-  { metric: "₹14", label: "Lowest CPL Delivered", color: "from-amber-300/20" },
+  {  metric: "+312%", label: "Organic Growth", color: "from-amber-300/20" },
+  { metric: "5.8x", label: "ROAS", color: "from-amber-300/20" },
+  {  metric: "2,000+", label: "Qualified Leads", color: "from-amber-300/20" },
+  { metric: "100%", label: "Knowledge Panels Approved", color: "from-amber-300/20" },
 ];
 
 const TESTIMONIALS = [
   { quote: "We saw improvement in our Google rankings and online visibility after SEO work. The Knowledge Panel for our company and personal brand helped build credibility and trust. The approach was professional, result-driven, and focused on growth.", name: "Divyesh Savaliya", role: "Chairman, Onix Renewable" },
   { quote: "We started seeing better rankings on Google and more visibility for our business after the SEO work. The progress is steady, and communication has been clear throughout. The approach is practical and focused on improving results over time.", name: "Piyush Variya", role: "Managing Director, Sunora Solar" },
-  { quote: "Our Meta Ads campaigns started delivering better results with a reduction in cost per lead. Within a few days, lead quality improved and performance became more stable. The approach is practical, data-driven, and focused on real results.", name: "Chintan Jadav", role: "owner, Lexus Energy" },
+  { quote: "Our Meta Ads campaigns started delivering better results with a reduction in cost per lead. Within a few days, lead quality improved and performance became more stable. The approach is practical, data-driven, and focused on real results.", name: "Chintan Jadav", role: "Owner, Lexus Energy" },
+  { quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.", name: "Yagna Chandra", role: "Director, Atul Motors(Maruti Suzuki)" },
   { quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.", name: "Yagna Chandra", role: "Director, Atul Motors(Maruti Suzuki)" },
   { quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.", name: "Alpesh Chandra", role: "CEO, Atul Automotives(Mahindra)" },
 ];
@@ -328,7 +329,7 @@ function Process() {
 function Work() {
   return (
     <section id="results" className="relative px-6 py-32">
-      <SectionHeading tag="Selected Work" title={<>Numbers that <span className="text-amber italic">compound.</span></>} sub="A snapshot of what's possible when strategy, content and engineering pull in the same direction." />
+      <SectionHeading tag="Selected Work" title={<>Numbers that <span className="text-amber italic">compound.</span></>} sub="Real campaigns, measurable growth and documented business impact." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
         {WORK.map((w, i) => (
           <Reveal key={w.brand} delay={i * 100}>
@@ -362,7 +363,7 @@ function Work() {
 function Testimonials() {
   return (
     <section className="relative px-6 py-32">
-      <SectionHeading tag="Voices" title={<>Trusted by founders <span className="text-amber italic">who ship.</span></>} />
+      <SectionHeading tag="CLIENT FEEDBACK" title={<>Trusted by businesses <span className="text-amber italic">that grow.</span></>} />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {TESTIMONIALS.map((t, i) => (
           <Reveal key={i} delay={i * 100}>
@@ -389,7 +390,7 @@ function Testimonials() {
 function Pricing() {
   return (
     <section id="pricing" className="relative px-6 py-32">
-      <SectionHeading tag="Engagements" title={<>Simple plans, <span className="text-amber italic">serious outcomes.</span></>} sub="Transparent monthly retainers. Cancel anytime after the initial 90-day strategy window." />
+      <SectionHeading tag="THE FOUNDATION" title={<>Built for execution, <span className="text-amber italic">not excuses.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {PRICING.map((p, i) => (
           <Reveal key={p.name} delay={i * 100}>
