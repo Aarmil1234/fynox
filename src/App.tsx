@@ -482,19 +482,18 @@ function CTA() {
           <Reveal>
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
-                <span className="h-1 w-1 rounded-full bg-amber" /> Let's build
+                <span className="h-1 w-1 rounded-full bg-amber" /> LET'S TALK
               </div>
 
               <h2 className="font-display mt-6 text-4xl font-bold leading-tight sm:text-6xl">
-                Ready to bend the
+                Ready to scale 
                 <br />
-                <span className="text-amber italic">growth curve?</span>
+                <span className="text-amber italic">your business?</span>
               </h2>
 
               <p className="mt-6 max-w-md text-muted-foreground">
-                Tell us where you are and where you want to be. You'll get a free
-                30-minute teardown of your current SEO and paid stack — no slides,
-                just signal.
+                Every business has untapped growth potential.
+Tell us where you are today and where you want to go, and we'll uncover the opportunities, strategies and execution priorities needed to scale with confidence.
               </p>
 
               <ul className="mt-8 space-y-3 text-sm">
@@ -505,12 +504,12 @@ function CTA() {
 
                 <li className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-amber" />
-                  +91 7359777047
+                  +91 7359 777 047
                 </li>
 
                 <li className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 text-amber" />
-                  Rajkot, Gujarat
+                  Based in Rajkot, Serving Businesses Worldwide
                 </li>
               </ul>
             </div>
@@ -524,13 +523,13 @@ function CTA() {
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field
-                  label="Full name"
+                  label="Name"
                   name="full_name"
                   placeholder="Your Name"
                 />
 
                 <Field
-                  label="Work email"
+                  label="Email"
                   name="email"
                   type="email"
                   placeholder="Your Email"
@@ -569,7 +568,7 @@ function CTA() {
                 disabled={loading}
                 className="group mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-amber px-6 py-4 text-sm font-semibold text-black transition-transform hover:scale-[1.02]"
               >
-                {loading ? "Sending..." : "Request my free audit"}
+                {loading ? "Sending..." : "Book Free Consultation"}
 
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
@@ -581,7 +580,7 @@ function CTA() {
               )}
 
               <p className="mt-3 text-center text-[11px] text-muted-foreground">
-                We reply within three business days.
+                Response within 24 hours.
               </p>
             </form>
           </Reveal>
@@ -628,7 +627,7 @@ function Footer() {
               <img src={logo} alt="Fynox" className="h-5 w-auto" style={{height: "40px"}} />
             </a>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-              A premium SEO and digital marketing studio engineering compounding growth for ambitious brands.
+              Performance marketing, SEO and digital authority systems engineered for measurable business growth.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {["Tw", "In", "Yt", "Dr"].map((s) => (
@@ -637,30 +636,31 @@ function Footer() {
             </div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Studio</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">SERVICES</div>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="#services" className="hover:text-amber">Services</a></li>
-              <li><a href="#process" className="hover:text-amber">Process</a></li>
-              <li><a href="#results" className="hover:text-amber">Results</a></li>
-              <li><a href="#contact" className="hover:text-amber">Contact</a></li>
+              <li><a href="#services" className="hover:text-amber">SEO</a></li>
+              <li><a href="#process" className="hover:text-amber">Meta Ads</a></li>
+              <li><a href="#results" className="hover:text-amber">Google Ads</a></li>
+              <li><a href="#contact" className="hover:text-amber">Knowledge Panel</a></li>
+              <li><a href="#contact" className="hover:text-amber">White Label SEO</a></li>
             </ul>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Resources</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">QUICK LINKS</div>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="#" className="hover:text-amber">SEO Audit Template</a></li>
-              <li><a href="#" className="hover:text-amber">Growth Playbook</a></li>
-              <li><a href="#" className="hover:text-amber">Insights</a></li>
+              <li><a href="#" className="hover:text-amber">About</a></li>
+              <li><a href="#" className="hover:text-amber">Results</a></li>
+              <li><a href="#" className="hover:text-amber">FAQ</a></li>
               <li><a href="#contact" className="hover:text-amber">Contact</a></li>
             </ul>
           </div>
         </div>
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-muted-foreground sm:flex-row">
-          <div className="flex items-center gap-2"><Globe className="h-3.5 w-3.5" /> © {new Date().getFullYear()} Fynox. All rights reserved.</div>
+          <div className="flex items-center gap-2"><Globe className="h-3.5 w-3.5" /> © {new Date().getFullYear()} FynoX Inc. All rights reserved.</div>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-foreground">Privacy</a>
+            <a href="#" className="hover:text-foreground">Privacy Policy</a>
             <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">Cookies</a>
+            <a href="#" className="hover:text-foreground">Disclaimer</a>
           </div>
         </div>
       </div>
