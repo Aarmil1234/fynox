@@ -267,7 +267,7 @@ function Services() {
     <section id="services" className="relative px-6 py-32">
       <SectionHeading
         tag="What we do"
-        title={<>Digital Growth Solutions, <span className="text-amber italic">built for results.</span></>}
+        title={<>Growth Systems, <span className="text-amber italic">engineered for outcomes.</span></>}
         sub="Strategic SEO, performance advertising and
 digital authority solutions designed to increase
 visibility, generate qualified leads and accelerate
@@ -627,7 +627,7 @@ function Footer() {
               <img src={logo} alt="Fynox" className="h-5 w-auto" style={{height: "40px"}} />
             </a>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-              Performance marketing, SEO and digital authority systems engineered for measurable business growth.
+              SEO, performance marketing and digital authority systems engineered for measurable business growth.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {["Tw", "In", "Yt", "Dr"].map((s) => (
