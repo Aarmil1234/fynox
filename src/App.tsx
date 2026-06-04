@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 import logo from "./assets/img/Fynox-Inc-logo.webp";
+import FounderSection from "./FounderSection";
 
 
 const NAV = [
@@ -64,28 +65,42 @@ const TESTIMONIALS = [
   { quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.", name: "Alpesh Chandra", role: "CEO, Atul Automotives(Mahindra)" },
 ];
 
+const FeatureCard = ({ title, desc }) => {
+  return (
+    <div className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_30px_80px_-20px_oklch(0.83_0.17_85/0.25)]">
+      <h4 className="font-semibold text-foreground mb-1">{title}</h4>
+      <p className="text-sm text-muted-foreground">{desc}</p>
+    </div>
+  );
+};
+
+const StatCard = ({ number, label }) => {
+  return (
+    <div className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_30px_80px_-20px_oklch(0.83_0.17_85/0.25)]">
+      <h3 className="text-3xl font-bold text-amber mb-2">{number}</h3>
+      <p className="text-sm text-muted-foreground">{label}</p>
+    </div>
+  );
+};
+
 const PRICING = [
   {
-    name: "Starter",
-    price: "₹9,999",
-    cadence: "/month",
-    pitch: "Perfect for businesses looking to improve search visibility and establish a strong organic foundation.",
-    features: ["Technical SEO foundation", "On-Page Optimization", "Off-Page Optimization", "Monthly Reporting"],
-  },
-  {
-    name: "Growth",
-    price: "₹19,999",
-    cadence: "/month",
-    pitch: "Most chosen - a full growth pod operating as your team.",
-    features: ["Everything in Starter", "Google Ads Management", "Meta Ads Management", "Conversion Tracking", "Strategy Reviews"],
+    name: "REGOR",
+    pitch: "FynoX Inc. operates as a fully legalized corporate consultancy framework (Registered GST & Udyam Setups) engineered for enterprise-grade billing data fidelity. All client data and ad credentials are strictly isolated and guarded using encrypted digital key vaults.",
+    features: ["On-Page Optimization", "Off-Page Optimization", "Monthly Reporting"],
     featured: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    cadence: "",
-    pitch: "Tailored growth solutions for established businesses, agencies and high-growth brands.",
-    features: ["Dedicated Strategy", "White Label SEO", "Knowledge Panel Services", "Custom Deliverables"],
+    name: "FOUNDATION",
+    pitch: "Founded by Chiman Maru, an MSC IT & BCA graduated and Google Certified Digital professional with 5+ Years of deployment experience. By blending IT data frameworks with performance SEO algorithms , he builds solid metrics-driven models that turn budgets into scale assets.",
+    features: ["Google Ads Management", "Meta Ads Management", "Conversion Tracking"],
+    featured: true,
+  },
+  {
+    name: "FOOTPRINT",
+    pitch: "From our technical base in Gujarat to coroporate ecosystems across Canada, FynoX serves as the invisible, highly disciplined backend white-label delivery engine that global agencies trust for absolute operational scale and seamless cross-border execution loops",
+    features: ["WHite Label SEO", "Knowledge Panel Services", "Custom Deliverables"],
+    featured: true,
   },
 ];
 
@@ -109,6 +124,7 @@ function Home() {
       <Process />
       <Work />
       <Testimonials />
+      <FounderSection />
       <Pricing />
       <FAQ />
       <CTA />
@@ -387,21 +403,88 @@ function Testimonials() {
   );
 }
 
+const FounderSection = () => {
+  return (
+    <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-background text-foreground">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        
+        <div className="relative">
+          <div className="relative rounded-3xl overflow-hidden shadow-soft">
+            
+            <img
+              src="/founder.jpg"
+              alt="Founder"
+              className="w-full h-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-amber/10 pointer-events-none"></div>
+          </div>
+
+          {/* Name Card */}
+          <div className="absolute bottom-4 left-4 bg-card/80 backdrop-blur-md border border-border px-5 py-3 rounded-xl">
+            <h3 className="text-lg font-semibold text-amber">
+              Chiman Maru
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Founder & Director
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <SectionHeading tag="THE FOUNDATION" title={<>Built for execution, <span className="text-amber italic">not excuses.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
+
+          <p className="text-muted-foreground mb-10">
+            Founded by <span className="text-amber font-medium">Chiman Maru</span>, 
+            our team helps businesses generate qualified leads, strengthen
+            digital authority and achieve sustainable growth.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            
+            <FeatureCard
+              title="5+ Years Experience"
+              desc="Proven expertise in SEO, ads and growth."
+            />
+            <FeatureCard
+              title="Google Certified"
+              desc="Ads & Analytics certified."
+            />
+            <FeatureCard
+              title="GST Registered"
+              desc="Fully compliant business."
+            />
+            <FeatureCard
+              title="White Label Partner"
+              desc="Trusted by agencies."
+            />
+
+          </div>
+        </div>
+      </div>
+
+      {/* STATS SECTION */}
+      <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <StatCard number="50+" label="Projects Delivered" />
+        <StatCard number="30+" label="Happy Clients" />
+        <StatCard number="4" label="Core Services" />
+        <StatCard number="100%" label="Transparent Reporting" />
+      </div>
+    </section>
+  );
+};
+
 function Pricing() {
   return (
     <section id="pricing" className="relative px-6 py-32">
-      <SectionHeading tag="THE FOUNDATION" title={<>Built for execution, <span className="text-amber italic">not excuses.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
+      <SectionHeading tag="The Infrastructure" title={<>About <span className="text-amber italic">FynoX Inc.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {PRICING.map((p, i) => (
           <Reveal key={p.name} delay={i * 100}>
             <div className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all ${p.featured ? "border-amber/60 bg-gradient-to-b from-amber/[0.08] to-transparent shadow-[0_30px_80px_-30px_oklch(0.83_0.17_85/0.45)]" : "border-white/10 bg-card/40"}`}>
-              {p.featured && <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-black">Most chosen</div>}
+              {/* {p.featured && <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-black">Most chosen</div>} */}
               <div className="font-display text-xl font-semibold">{p.name}</div>
               <div className="mt-2 text-sm text-muted-foreground">{p.pitch}</div>
-              <div className="mt-8 flex items-baseline gap-1">
-                <div className="font-display text-5xl font-bold">{p.price}</div>
-                <div className="text-sm text-muted-foreground">{p.cadence}</div>
-              </div>
               <ul className="mt-8 flex-1 space-y-3">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm">
@@ -410,10 +493,6 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02] ${p.featured ? "bg-amber text-black" : "border border-white/15 text-foreground hover:bg-white/5"}`}>
-                Start with {p.name}
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
             </div>
           </Reveal>
         ))}
