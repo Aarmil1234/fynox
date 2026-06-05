@@ -157,7 +157,7 @@ Let's Talk          <ArrowUpRight className="h-4 w-4 transition-transform group-
 
 function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 text-center">
+    <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-6 sm:pt-32 text-center">
       <Reveal>
         <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-amber animate-pulse" />
@@ -264,7 +264,7 @@ function SectionHeading({ tag, title, sub }: { tag: string; title: ReactNode; su
 
 function Services() {
   return (
-    <section id="services" className="relative px-6 py-32">
+    <section id="services" className="relative px-6 sm:py-32">
       <SectionHeading
         tag="What we do"
         title={<>Growth Systems, <span className="text-amber italic">engineered for outcomes.</span></>}
@@ -304,7 +304,7 @@ business growth."
 
 function Process() {
   return (
-    <section id="process" className="relative px-6 py-32">
+    <section id="process" className="relative px-6 sm:py-32">
       <SectionHeading tag="The Method" title={<>An operating system, <span className="text-amber italic">not a project.</span></>} sub="A proven framework that turns visibility into qualified leads and sustainable growth." />
       <div className="mx-auto max-w-6xl">
         <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -328,7 +328,7 @@ function Process() {
 
 function Work() {
   return (
-    <section id="results" className="relative px-6 py-32">
+    <section id="results" className="relative px-6 sm:py-32">
       <SectionHeading tag="Selected Work" title={<>Numbers that <span className="text-amber italic">compound.</span></>} sub="Real campaigns, measurable growth and documented business impact." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
         {WORK.map((w, i) => (
@@ -362,7 +362,7 @@ function Work() {
 
 function Testimonials() {
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-6 sm:py-32">
       <SectionHeading tag="CLIENT FEEDBACK" title={<>Trusted by businesses <span className="text-amber italic">that grow.</span></>} />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {TESTIMONIALS.map((t, i) => (
@@ -389,7 +389,7 @@ function Testimonials() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="relative px-6 py-32">
+    <section id="pricing" className="relative px-6 sm:py-32">
       <SectionHeading tag="THE FOUNDATION" title={<>Built for execution, <span className="text-amber italic">not excuses.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
         {PRICING.map((p, i) => (
@@ -424,7 +424,7 @@ function Pricing() {
 
 function FAQ() {
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-6 sm:py-32">
       <SectionHeading tag="FAQ" title={<>Questions, <span className="text-amber italic">answered.</span></>} />
       <div className="mx-auto max-w-3xl space-y-3">
         {FAQS.map((f, i) => (
@@ -476,7 +476,7 @@ function CTA() {
   }
 
   return (
-    <section id="contact" className="relative px-6 py-32">
+    <section id="contact" className="relative px-6 sm:py-32">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-amber/30 bg-gradient-to-br from-amber/[0.12] via-background to-background p-10 sm:p-16">
         <div className="grid gap-12 lg:grid-cols-2">
           <Reveal>
