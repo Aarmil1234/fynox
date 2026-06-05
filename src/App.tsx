@@ -58,12 +58,42 @@ const WORK = [
 ];
 
 const TESTIMONIALS = [
-  { quote: "We saw improvement in our Google rankings and online visibility after SEO work. The Knowledge Panel for our company and personal brand helped build credibility and trust. The approach was professional, result-driven, and focused on growth.", name: "Divyesh Savaliya", role: "Chairman, Onix Renewable" },
-  { quote: "We started seeing better rankings on Google and more visibility for our business after the SEO work. The progress is steady, and communication has been clear throughout. The approach is practical and focused on improving results over time.", name: "Piyush Variya", role: "Managing Director, Sunora Solar" },
-  { quote: "Our Meta Ads campaigns started delivering better results with a reduction in cost per lead. Within a few days, lead quality improved and performance became more stable. The approach is practical, data-driven, and focused on real results.", name: "Chintan Jadav", role: "Owner, Lexus Energy" },
-  { quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.", name: "Yagna Chandra", role: "Director, Atul Motors(Maruti Suzuki)" },
-  { quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.", name: "Yagna Chandra", role: "Director, Atul Motors(Maruti Suzuki)" },
-  { quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.", name: "Alpesh Chandra", role: "CEO, Atul Automotives(Mahindra)" },
+  {
+    quote: "We saw improvement in our Google rankings and online visibility after SEO work. The Knowledge Panel for our company and personal brand helped build credibility and trust. The approach was professional, result-driven, and focused on growth.",
+    name: "Divyesh Savaliya",
+    role: "Chairman, Onix Renewable",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Divyesh_Savaliya_zdnmuc.png",
+  },
+  {
+    quote: "We started seeing better rankings on Google and more visibility for our business after the SEO work. The progress is steady, and communication has been clear throughout. The approach is practical and focused on improving results over time.",
+    name: "Piyush Variya",
+    role: "Managing Director, Sunora Solar",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Piyush_Variya_jrdbql.png",
+  },
+  {
+    quote: "Our Meta Ads campaigns started delivering better results with a reduction in cost per lead. Within a few days, lead quality improved and performance became more stable. The approach is practical, data-driven, and focused on real results.",
+    name: "Chintan Jadav",
+    role: "Owner, Lexus Energy",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Chintan_Jadav_gktyfv.png",
+  },
+  {
+    quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.",
+    name: "Yagna Chandra",
+    role: "Director, Atul Motors (Maruti Suzuki)",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Yagna_Chandra_lp1wus.png",
+  },
+  {
+    quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.",
+    name: "Yagna Chandra",
+    role: "Director, Atul Motors (Maruti Suzuki)",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Alpesh_Chandra_dg6jhi.png",
+  },
+  {
+    quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.",
+    name: "Alpesh Chandra",
+    role: "CEO, Atul Automotives (Mahindra)",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Alpesh_Chandra_dg6jhi.png",
+  },
 ];
 
 const FeatureCard = ({ title, desc }) => {
@@ -390,7 +420,7 @@ function Testimonials() {
               </div>
               <p className="mt-5 flex-1 text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
               <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-amber/60 to-amber/20" />
+                <img src={t.image} alt={t.name} className="h-10 w-10 rounded-full bg-gradient-to-br from-amber/60 to-amber/20" />
                 <div>
                   <div className="text-sm font-semibold">{t.name}</div>
                   <div className="text-xs text-muted-foreground">{t.role}</div>
@@ -413,7 +443,7 @@ const FounderSection = () => {
           <div className="relative rounded-3xl overflow-hidden shadow-soft">
             
             <img
-              src="https://res.cloudinary.com/dhwkiyrp9/image/upload/Copilot_20260604_210822_cbdwnx.png"
+              src="https://res.cloudinary.com/dhwkiyrp9/image/upload/Chiman_Maru_Founder_FynoX_Inc._neel2y.png"
               alt="Founder"
               className="w-full h-full object-cover"
             />
