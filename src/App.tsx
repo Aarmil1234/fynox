@@ -171,7 +171,7 @@ function Nav() {
           ))}
         </ul>
         <a
-          href="#contact"
+          href="https://wa.me/917359777047?text=Hi%20FynoX%2C%20I%27d%20like%20to%20discuss%20a%20project.%20Let%27s%20talk!"
           className="group flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
         >
 Let's Talk          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -555,9 +555,9 @@ function CTA() {
         <div className="grid gap-12 lg:grid-cols-2">
           <Reveal>
             <div>
-              <a href="https://wa.me/917359777047?text=Hi%20FynoX%2C%20I%27d%20like%20to%20discuss%20a%20project.%20Let%27s%20talk!" className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
                 <span className="h-1 w-1 rounded-full bg-amber" /> LET'S TALK
-              </a>
+              </div>
 
               <h2 className="font-display mt-6 text-4xl font-bold leading-tight sm:text-6xl">
                 Ready to scale 
