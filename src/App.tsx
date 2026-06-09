@@ -30,7 +30,7 @@ const NAV = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "Results", href: "#results" },
-  { label: "About", href: "#pricing" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -84,12 +84,12 @@ const TESTIMONIALS = [
   },
   {
     quote: "We started getting more relevant inquiries for Maruti Suzuki cars through Meta Ads campaigns. Lead flow improved and targeting became more effective over time. The approach is practical and focused on consistent results.",
-    name: "Yagna Chandra",
-    role: "Director, Atul Motors (Maruti Suzuki)",
-    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Alpesh_Chandra_dg6jhi.png",
+    name: "Dr. Vishal Patel",
+    role: "Founder & CEO, Drlogy",
+    image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Dr._Vishal_Patel_jootzo.png",
   },
   {
-    quote: "Meta Ads campaigns helped improve the quality of inquiries for our Mahindra vehicles. Lead generation became more consistent, and targeting was handled effectively. The overall approach is practical and focused on delivering steady results.",
+    quote: "Meta Ads campaigns improved the quality of demo and inquiry leads for our healthcare platform. Lead generation became more consistent, targeting was effective, and the overall approach remained focused on measurable growth.",
     name: "Alpesh Chandra",
     role: "CEO, Atul Automotives (Mahindra)",
     image: "https://res.cloudinary.com/dhwkiyrp9/image/upload/Alpesh_Chandra_dg6jhi.png",
@@ -114,32 +114,12 @@ const StatCard = ({ number, label }) => {
   );
 };
 
-const PRICING = [
-  {
-    name: "REGOR",
-    pitch: "FynoX Inc. operates as a fully legalized corporate consultancy framework (Registered GST & Udyam Setups) engineered for enterprise-grade billing data fidelity. All client data and ad credentials are strictly isolated and guarded using encrypted digital key vaults.",
-    features: ["On-Page Optimization", "Off-Page Optimization", "Monthly Reporting"],
-    featured: true,
-  },
-  {
-    name: "FOUNDATION",
-    pitch: "Founded by Chiman Maru, an MSC IT & BCA graduated and Google Certified Digital professional with 5+ Years of deployment experience. By blending IT data frameworks with performance SEO algorithms , he builds solid metrics-driven models that turn budgets into scale assets.",
-    features: ["Google Ads Management", "Meta Ads Management", "Conversion Tracking"],
-    featured: true,
-  },
-  {
-    name: "FOOTPRINT",
-    pitch: "From our technical base in Gujarat to coroporate ecosystems across Canada, FynoX serves as the invisible, highly disciplined backend white-label delivery engine that global agencies trust for absolute operational scale and seamless cross-border execution loops",
-    features: ["WHite Label SEO", "Knowledge Panel Services", "Custom Deliverables"],
-    featured: true,
-  },
-];
 
 const FAQS = [
-  { q: "How quickly will I see SEO results?", a: "Technical wins land in 30 days. Meaningful organic lift typically begins month 3 and compounds aggressively from month 6." },
-  { q: "Do you work with our existing team?", a: "Always. We embed in your tools — Slack, Linear, Notion — and operate as an extension of your in-house marketing function." },
-  { q: "What industries do you specialize in?", a: "B2B SaaS, fintech, healthcare, and considered DTC. Verticals with long sales cycles where content and trust drive revenue." },
-  { q: "Is there a minimum contract length?", a: "We ask for a 90-day initial engagement so the strategy can prove itself, then we move month-to-month. No surprise lock-ins." },
+  { q: "How quickly will I see SEO results?", a: "Technical improvements show within 30 days. Meaningful organic growth begins by month 3 and compounds from month 6. SEO is a long-term system - the longer it runs, the stronger it gets." },
+  { q: "Can you get me a Google Knowledge Panel?", a: "Yes - this is one of our core specialisations. We handle entity creation, Google entity optimisation, and digital authority building to establish your brand directly on Google Search." },
+  { q: "Do you offer white label SEO for agencies?", a: "Yes. We work as a silent backend partner - handling full SEO delivery under your brand name. NDA-friendly with monthly reporting included." },
+  { q: " Is there a minimum contract period?", a: "We recommend starting with a 3-month engagement so the strategy has time to show real results. After that it's fully flexible - no lock-ins, no surprises." },
 ];
 
 function Home() {
@@ -156,7 +136,6 @@ function Home() {
       <Work />
       <Testimonials />
       <FounderSection />
-      <Pricing />
       <FAQ />
       <CTA />
       <Footer />
@@ -231,8 +210,8 @@ transparent reporting.
 
       <Reveal delay={360}>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href="#contact" className="group flex items-center gap-2 rounded-full bg-amber px-7 py-4 text-sm font-semibold text-black transition-transform hover:scale-105">
-            Get a Quote
+          <a href="https://wa.me/917359777047?text=Hi%20FynoX%2C%20I%27m%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20business." className="group flex items-center gap-2 rounded-full bg-amber px-7 py-4 text-sm font-semibold text-black transition-transform hover:scale-105">
+            Get Free Audit
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a href="#results" className="rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-white/5">
@@ -436,16 +415,17 @@ function Testimonials() {
 
 const FounderSection = () => {
   return (
-    <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-background text-foreground">
+    <section id="about" className="w-full py-20 px-6 md:px-12 lg:px-20 bg-background text-foreground">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
-        <div className="relative group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_30px_80px_-20px_oklch(0.83_0.17_85/0.25)]">
+        <div className="relative group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent transition-all hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_30px_80px_-20px_oklch(0.83_0.17_85/0.25)]">
           <div className="relative rounded-3xl overflow-hidden shadow-soft">
             
             <img
               src="https://res.cloudinary.com/dhwkiyrp9/image/upload/Chiman_Maru_Founder_FynoX_Inc._neel2y.png"
               alt="Founder"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
+              style={{ height: "470px" }}
             />
 
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-amber/10 pointer-events-none"></div>
@@ -515,32 +495,6 @@ const FounderSection = () => {
   );
 };
 
-function Pricing() {
-  return (
-    <section id="pricing" className="relative px-6 sm:py-32 py-6">
-      <SectionHeading tag="THE FOUNDATION" title={<>Built for execution, <span className="text-amber italic">not excuses.</span></>} sub="We combine strategy, advertising and search visibility into a single growth system engineered for measurable business outcomes." />
-      <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
-        {PRICING.map((p, i) => (
-          <Reveal key={p.name} delay={i * 100}>
-            <div className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all ${p.featured ? "border-amber/60 bg-gradient-to-b from-amber/[0.08] to-transparent shadow-[0_30px_80px_-30px_oklch(0.83_0.17_85/0.45)]" : "border-white/10 bg-card/40"}`}>
-              {/* {p.featured && <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-black">Most chosen</div>} */}
-              <div className="font-display text-xl font-semibold">{p.name}</div>
-              <div className="mt-2 text-sm text-muted-foreground">{p.pitch}</div>
-              <ul className="mt-8 flex-1 space-y-3">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                    <span className="text-foreground/85">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 function FAQ() {
   return (
@@ -601,9 +555,9 @@ function CTA() {
         <div className="grid gap-12 lg:grid-cols-2">
           <Reveal>
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
+              <a href="https://wa.me/917359777047?text=Hi%20FynoX%2C%20I%27d%20like%20to%20discuss%20a%20project.%20Let%27s%20talk!" className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-amber">
                 <span className="h-1 w-1 rounded-full bg-amber" /> LET'S TALK
-              </div>
+              </a>
 
               <h2 className="font-display mt-6 text-4xl font-bold leading-tight sm:text-6xl">
                 Ready to scale 
